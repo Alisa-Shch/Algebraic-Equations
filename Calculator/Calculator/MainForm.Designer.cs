@@ -31,9 +31,9 @@ namespace Calculator
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBoxYMax = new System.Windows.Forms.TextBox();
@@ -150,12 +150,13 @@ namespace Calculator
             this.groupBox2.Controls.Add(this.btnBuildGraph);
             this.groupBox2.Controls.Add(this.chart);
             this.groupBox2.Controls.Add(this.panel8);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(8, 214);
+            this.groupBox2.Location = new System.Drawing.Point(0, 202);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(580, 332);
+            this.groupBox2.Size = new System.Drawing.Size(593, 339);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -209,9 +210,10 @@ namespace Calculator
             // 
             // btnScale
             // 
+            this.btnScale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnScale.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnScale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnScale.Location = new System.Drawing.Point(354, 293);
+            this.btnScale.Location = new System.Drawing.Point(366, 294);
             this.btnScale.Name = "btnScale";
             this.btnScale.Size = new System.Drawing.Size(186, 25);
             this.btnScale.TabIndex = 3;
@@ -221,9 +223,10 @@ namespace Calculator
             // 
             // btnBuildGraph
             // 
+            this.btnBuildGraph.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuildGraph.BackColor = System.Drawing.SystemColors.HighlightText;
             this.btnBuildGraph.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnBuildGraph.Location = new System.Drawing.Point(354, 262);
+            this.btnBuildGraph.Location = new System.Drawing.Point(366, 263);
             this.btnBuildGraph.Name = "btnBuildGraph";
             this.btnBuildGraph.Size = new System.Drawing.Size(186, 25);
             this.btnBuildGraph.TabIndex = 2;
@@ -234,29 +237,29 @@ namespace Calculator
             // chart
             // 
             this.chart.BackColor = System.Drawing.SystemColors.HighlightText;
-            chartArea1.AxisX.Crossing = 0D;
-            chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea1.AxisX.LineWidth = 2;
-            chartArea1.AxisY.Crossing = 0D;
-            chartArea1.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea1.AxisY.LineWidth = 2;
-            chartArea1.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea1);
+            chartArea2.AxisX.Crossing = 0D;
+            chartArea2.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea2.AxisX.LineWidth = 2;
+            chartArea2.AxisY.Crossing = 0D;
+            chartArea2.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea2.AxisY.LineWidth = 2;
+            chartArea2.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea2);
             this.chart.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
-            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F);
-            legend1.IsTextAutoFit = false;
-            legend1.Name = "Legend1";
-            this.chart.Legends.Add(legend1);
+            legend2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F);
+            legend2.IsTextAutoFit = false;
+            legend2.Name = "Legend1";
+            this.chart.Legends.Add(legend2);
             this.chart.Location = new System.Drawing.Point(5, 18);
             this.chart.Name = "chart";
-            series1.BorderWidth = 3;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F);
-            series1.IsVisibleInLegend = false;
-            series1.Legend = "Legend1";
-            series1.Name = "Func";
-            this.chart.Series.Add(series1);
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F);
+            series2.IsVisibleInLegend = false;
+            series2.Legend = "Legend1";
+            series2.Name = "Func";
+            this.chart.Series.Add(series2);
             this.chart.Size = new System.Drawing.Size(278, 282);
             this.chart.TabIndex = 0;
             this.chart.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.SystemDefault;
@@ -264,10 +267,11 @@ namespace Calculator
             // 
             // panel8
             // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.Controls.Add(this.panel7);
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Controls.Add(this.panel10);
-            this.panel8.Location = new System.Drawing.Point(317, 18);
+            this.panel8.Location = new System.Drawing.Point(329, 19);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(259, 241);
@@ -655,7 +659,6 @@ namespace Calculator
             // btnCheckResult
             // 
             this.btnCheckResult.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btnCheckResult.Enabled = false;
             this.btnCheckResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnCheckResult.Location = new System.Drawing.Point(136, 3);
             this.btnCheckResult.Name = "btnCheckResult";
@@ -686,9 +689,10 @@ namespace Calculator
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.degreeBox);
-            this.groupBox1.Location = new System.Drawing.Point(8, 12);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(580, 202);
+            this.groupBox1.Size = new System.Drawing.Size(593, 202);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
@@ -980,6 +984,7 @@ namespace Calculator
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.groupBox3.Controls.Add(this.labelTrackBar);
             this.groupBox3.Controls.Add(this.trackBar);
@@ -1086,15 +1091,17 @@ namespace Calculator
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(596, 552);
+            this.ClientSize = new System.Drawing.Size(593, 541);
             this.Controls.Add(this.labelCoeff0);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(609, 580);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Решение алгебраических уравнений";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();

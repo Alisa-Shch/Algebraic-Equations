@@ -6,7 +6,20 @@ using System.Windows.Forms.DataVisualization.Charting;
 namespace Calculator
 {
     public partial class MainForm : Form
-    {       
+    {
+        /*
+        private void textBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (sender is TextBox textBox)
+            {
+                if (textBox == _listTextBoxA[degreeBox.SelectedIndex + 1] && e.KeyValue == 9)
+                {
+                    e.IsInputKey = true;
+                }
+            }
+        }
+        */
+       
         public void textBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (sender is TextBox textBox)
@@ -16,11 +29,12 @@ namespace Calculator
                 else
                 {
                     if (e.KeyChar == '.') e.KeyChar = ',';
-                    if (e.KeyChar != 13 && e.KeyChar != 44 && e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
+                    if (/*e.KeyChar != 9 &&*/ e.KeyChar != 13 && e.KeyChar != 44 && e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
                     {
                         e.Handled = true;
                         MessageBox.Show("Только цифpы!");
                     }
+                    //if (e.KeyChar == 9 && VerifyСoef(sender)) _listTextBoxA[_listTextBoxA.IndexOf(textBox)-1].Focus();
                     if (e.KeyChar == 13 && VerifyСoef(sender))
                     {
                         if (textBox.Text.Length > 0 && textBox.Text != "-") SendKeys.Send("{TAB}");
@@ -161,6 +175,7 @@ namespace Calculator
                     _listPanel[i].Visible = false;
                     _listTextBoxX[i].Text = string.Empty;
                     _listTextBoxfX[i].Text = string.Empty;
+                    //_listPanelfx[i].Visible = true;
                 }
             }
             degreeBox.SelectedIndex = -1;
@@ -169,13 +184,20 @@ namespace Calculator
             groupBox2.Enabled = false;
             btnClear.Visible = false;
             panel7.Visible = false;
-            btnCheckResult.Enabled = false;
+            //btnCheckResult.Enabled = false;
         }
 
         private void btnFindRoots_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < _listTextBoxfX.Count; i++) { _listTextBoxfX[i].Text = string.Empty; }                
             AnalyticalSolution();
-            btnCheckResult.Enabled = true;
+            //btnCheckResult.Enabled = true;
+        }
+
+        private void btnSolveNum_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < _listTextBoxfX.Count; i++) { _listTextBoxfX[i].Text = string.Empty; }
+            new NumForm(this).ShowDialog();
         }
 
         private void btnBuildGraph_Click(object sender, EventArgs e)
@@ -220,11 +242,6 @@ namespace Calculator
             {
                 _listTextBoxfX[i].Text = $"{Math.Round(_a[3] * Math.Pow(_roots[i], 3) + _a[2] * Math.Pow(_roots[i], 2) + _a[1] * _roots[i] + _a[0], 10)}";
             }
-        }
-
-        private void btnSolveNum_Click(object sender, EventArgs e)
-        {
-            new NumForm(this).ShowDialog();
         }
 
         private void chart_MouseEnter(object sender, EventArgs e)

@@ -46,17 +46,24 @@ namespace Calculator
             {
                 _leftBorder = Convert.ToDouble(textBox1.Text);
                 _rightBorder = Convert.ToDouble(textBox2.Text);
-                if (_leftBorder != _rightBorder)
+                if (_mainForm.Function(_leftBorder)*_mainForm.Function(_rightBorder) > 0 && !_multipleRoots)
                 {
-                    if (_leftBorder < _rightBorder)
-                    {
-                        _mainForm.NumericalSolution(_leftBorder, _rightBorder, _accuracy, _multipleRoots);
-
-                        Close();
-                    }
-                    else MessageBox.Show("Левая граница должна быть меньше правой");
+                    MessageBox.Show("На отрезке имеется более одного корня");
                 }
-                else MessageBox.Show("Левая граница не должна быть равна правой");
+                else
+                {
+                    if (_leftBorder != _rightBorder)
+                    {
+                        if (_leftBorder < _rightBorder)
+                        {
+                            _mainForm.NumericalSolution(_leftBorder, _rightBorder, _accuracy, _multipleRoots);
+
+                            Close();
+                        }
+                        else MessageBox.Show("Левая граница должна быть меньше правой");
+                    }
+                    else MessageBox.Show("Левая граница не должна быть равна правой");
+                }
             }
             catch (Exception ex)
             {

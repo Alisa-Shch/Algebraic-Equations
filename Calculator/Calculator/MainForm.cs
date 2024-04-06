@@ -1,6 +1,7 @@
 ﻿using Calculation;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Calculator
@@ -13,6 +14,21 @@ namespace Calculator
             AddComponents();
         }
 
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            btnConfirm.Location = new Point(groupBox1.Width/2 - btnConfirm.Width/2, 167); //(int)Math.Round(groupBox1.Height*82.67/100)
+            btnClear.Location = new Point(groupBox1.Width/2 - btnClear.Width/2, 167);
+
+            groupBoxFx.Location = new Point(groupBox1.Width/2 - groupBoxFx.Width/2, 99);
+
+            groupBox1.Height = (int)(Height*34.83/100);
+
+            groupBox2.Location = new Point(0, (int)(Height*93.1/100*38.3/100));
+            groupBox2.Height = (int)(Height*57.24/100);
+
+            //panel12.Width = (int)(groupBox2.Width * 45.61 / 100);
+        }
+
         private List<TextBox> _listTextBoxA = new List<TextBox>();
         private List<TextBox> _listTextBoxX = new List<TextBox>();
         private List<TextBox> _listTextBoxfX = new List<TextBox>();
@@ -23,9 +39,8 @@ namespace Calculator
         private Dictionary<TextBox, double> _scale = new Dictionary<TextBox, double>();
         private double[] _a = new double[6];
         private List<double> _roots = new List<double>();
-        private List<double> _rootsNumSolution = new List<double>();
+        //private List<double> _rootsNumSolution = new List<double>();
         private List<СomplexNumber> _complexRoots = new List<СomplexNumber>();
-
 
         private double _XMin = -20;
         private double _XMax = 20;
