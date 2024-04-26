@@ -89,7 +89,11 @@ namespace Calculator
                     if (textBox.Text.Length != 0 && textBox.Text != "-")
                     {
                         _scale[textBox] = Convert.ToDouble(textBox.Text);
-                        btnBuildGraph_Click(sender, e);
+
+                        if (_scale[textBoxXMin] < _scale[textBoxXMax] && _scale[textBoxYMin] < _scale[textBoxYMax])
+                        {
+                            btnBuildGraph_Click(sender, e);
+                        }
                     }
                 }
                 catch (Exception ex)
